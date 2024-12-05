@@ -1,0 +1,63 @@
+@use 'variables';
+
+.event {
+    padding: 80px 0;
+
+    &--frontend{
+        background-image: linear-gradient(variables.$degrade1, variables.$degrade2);
+    }
+    &--ui-ux{
+        background-image: linear-gradient(variables.$degrade2, variables.$degrade3);
+    }
+    &--data{
+        background-image: linear-gradient(variables.$degrade3, variables.$degrade4);
+    }
+    &--backend{
+        background-image: linear-gradient(variables.$degrade4, variables.$degrade3);
+    }
+
+    &--image-left{
+        .container{
+            flex-direction: row-reverse;
+        }
+    }
+
+    .container {
+        display: flex;
+        gap: 40px;
+    }
+
+    &__image {
+        max-width: 360px;
+    }
+
+    &__details {
+
+        &__title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+
+        }
+
+        &__description {
+            line-height: 22px;
+        }
+    }
+
+    @media (max-width:640px){
+        .container{
+            display: block;
+        }
+
+        &__image{
+            width: 100%;
+        }
+
+        &__details{
+            margin-right: 0;
+            margin-bottom: 16px;
+        }
+    }
+
+}
